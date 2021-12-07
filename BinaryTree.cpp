@@ -10,11 +10,14 @@ using namespace std;
 void BinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode)
 {
     if (nodePtr == nullptr)
-    {
-        nodePtr = newNode;
-    }
+        nodePtr = newNode;                          //this is what inserts the node
+    else if (newNode->sequence < nodePtr->sequence)
+        insert(nodePtr->left, newNode);
+    else
+        insert(nodePtr->right, newNode);
 
-    //todo implement insert method
+
+
 }
 
 //creates a new node to hold data and passes it to insert function
