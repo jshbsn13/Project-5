@@ -42,11 +42,26 @@ bool BinaryTree::searchNode(string str)
     while (nodePtr)
     {
         if(nodePtr->sequence == str)      //if found return true
+        {
+            nodePtr->count += 1;
             return true;
+        }
+
+
         else if (str < nodePtr->sequence) //if str is smaller set nodePtr to left node pointer
             nodePtr = nodePtr->left;
         else
             nodePtr = nodePtr->right;     //otherwise, set nodePtr to right node pointer
     }
     return false;
+}
+
+void BinaryTree::displayInOrder(TreeNode *nodePtr) const
+{
+    if (nodePtr)
+    {
+        displayInOrder(nodePtr->left);
+        cout << nodePtr->sequence << ": " << nodePtr->count << endl;
+        displayInOrder(nodePtr->right);
+    }
 }
