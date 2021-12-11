@@ -1,3 +1,15 @@
+
+//***************************
+//Project 5
+//Josh Boston
+//***************************
+
+
+
+//Text file must be one directory above executable
+
+
+
 #include <iostream>
 #include <fstream>
 #include <string>
